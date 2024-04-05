@@ -21,13 +21,14 @@ public class Covid19Data {
 
     @Override
     public String toString() {
-        return  "region=" + region +
-                ", aldersgruppe=" + aldergruppe +
-                ", bekræftede tilfælde i alt=" + bekræftedeTilfældeIAlt +
-                ", døde=" + døde +
-                ", indlagte på intensiv afdeling=" + indlagtePåIntensivAfdeling +
-                ", indlagte=" + indlagte +
-                ", dato=" + dato;
+        return  "Region: " + region +
+                "\nAldersgruppe: " + aldergruppe + " år" +
+                "\nBekræftede tilfælde i alt: " + bekræftedeTilfældeIAlt +
+                "\nDøde: " + døde +
+                "\nIndlagte på intensiv afdeling: " + indlagtePåIntensivAfdeling +
+                "\nIndlagte: " + indlagte +
+                "\nDato: " + dato +
+                "\n";
     }
 
 }
