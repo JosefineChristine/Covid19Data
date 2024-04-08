@@ -6,9 +6,9 @@ public class UserInterface {
     String userInput = "";
     FileHandler fileHandler = new FileHandler();
 
-    public void sortData() {
-        ArrayList<Covid19Data> covid19Data = fileHandler.loadAllCovidData();
+    ArrayList<Covid19Data> covid19Data = fileHandler.loadAllCovidData();
 
+    public void sortData() {
         System.out.println("Her kan du sortere Covid19 data");
         System.out.println("Skriv ''region'' hvis du vil sortere efter region");
         System.out.println("Skriv ''alder'' hvis du vil sortere efter aldersgruppe");
@@ -22,7 +22,12 @@ public class UserInterface {
         } else {
             System.out.println("Det indtastede findes ikke");
         }
-        System.out.println(covid19Data);
+
+        for (Covid19Data data : covid19Data) {
+            System.out.println(data.toString());
+        }
+
     }
+
 
 }
