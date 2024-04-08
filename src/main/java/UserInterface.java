@@ -6,19 +6,22 @@ public class UserInterface {
     String userInput = "";
     FileHandler fileHandler = new FileHandler();
 
+    RegionComparator regionComparator = new RegionComparator();
+    AldersGruppeComparator aldersGruppeComparator = new AldersGruppeComparator();
+
     ArrayList<Covid19Data> covid19Data = fileHandler.loadAllCovidData();
 
     public void sortData() {
         System.out.println("Her kan du sortere Covid19 data");
-        System.out.println("Skriv ''region'' hvis du vil sortere efter region");
-        System.out.println("Skriv ''alder'' hvis du vil sortere efter aldersgruppe");
+        System.out.println("Skriv 'region' hvis du vil sortere efter region");
+        System.out.println("Skriv 'alder' hvis du vil sortere efter aldersgruppe");
 
         userInput = sc.next();
 
         if (userInput.equalsIgnoreCase("region")) {
-            covid19Data.sort(new RegionComparator());
+            covid19Data.sort(regionComparator);
         } else if (userInput.equalsIgnoreCase("alder")) {
-            covid19Data.sort(new AldersGruppeComparator());
+            covid19Data.sort(aldersGruppeComparator);
         } else {
             System.out.println("Det indtastede findes ikke");
         }
@@ -28,6 +31,5 @@ public class UserInterface {
         }
 
     }
-
 
 }
